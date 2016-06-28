@@ -6,7 +6,7 @@
 
 ### Max Grüntgens, Dominik Kasper
 
-Präsentation zu Auszeichnungssprachen und Austauschformaten in geistesswissenschaftlichen Forschungs- und Publikationskontexten im Rahmen der <a href="http://www.mainzed.org">mainzed</a> Lunch Letcures.
+Präsentation zu Auszeichnungssprachen und Austauschformaten in geistesswissenschaftlichen Forschungs- und Publikationskontexten im Rahmen der <a href="http://www.mainzed.org">mainzed</a> Lunch Lectures.
 
 Die Präsentation ist unter <a href="http://digicademy.github.io/mainzed_lunch_lectures_markup">http://digicademy.github.io/mainzed_lunch_lectures_markup</a> einsehbar.
 

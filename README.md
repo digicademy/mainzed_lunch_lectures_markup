@@ -10,4 +10,4 @@ Präsentation zu Auszeichnungssprachen und Austauschformaten in geistesswissensc
 
 Die Präsentation ist unter <a href="http://digicademy.github.io/mainzed_lunch_lectures_markup">http://digicademy.github.io/mainzed_lunch_lectures_markup</a> einsehbar.
 
-Released unter [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/), Max Grüntgens, Dominik Kasper and Torsten Schrade
+Released unter [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/), Max Grüntgens, Dominik Kasper and Torsten Schrade; Digitale Akademie

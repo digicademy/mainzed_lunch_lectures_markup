@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Mainzed Lunch Lectures – Markup in geisteswissenschaftlichen Forschungs- und Publikations-Kontexten am Beispiel der  Extensible Markup Language (XML)</title>
+        <link href="css/reset.css" rel="stylesheet" />
+        <meta name="author" content="Max Grüntgens">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=1024" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="shortcut icon" href="images/favicon2.ico" />
+        <link rel="apple-touch-icon" href="css/apple-touch-icon.png" />
+
+        <!-- code highlighting -->
+        <link href="css/highlight.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="js/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <!-- theme stylesheet -->
+        <link href="css/style.css" rel="stylesheet" />
+
+        <!-- jquery -->
+        <script type="text/javascript" src="js/jquery.1.8.min.js"></script>
+
+        <!-- greuler -->
+        <script src="js/d3.v3.min.js"></script>
+        <script src="js/cola.v3.js"></script>
+        <script src="js/greuler.min.js"></script>
+
+        <!-- codemirror for sparql -->
+        <link rel="stylesheet" href="css/codemirror.css" />
+        <link rel="stylesheet" href="css/sparqlcolors.css" />
+        <script src="js/codemirror.js"></script>
+        <script src="js/matchbrackets.js"></script>
+        <script src="js/sparql.js"></script>
+    </head>
+    <body>
+
+<!--  START -->
+<!-- wraps whole presentation -->
+<div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+    <div id="impress">
+
+        <div class="step">
+            <h4>mainzed | Lunch Lectures</h4>
+
+            <h1>Markup in geisteswissenschaftlichen Forschungs- und Publikations-Kontexten</h1>
+
+            <h2>am Beispiel der  Extensible Markup Language (XML)</h2>
+
+            <h3 style="margin-top: 1em; font-size: 30px;">
+                <strong>Max Grüntgens (Akademie Mainz) | Dominik Kasper (Akademie Mainz) <br>
+                    <img src="https://pbs.twimg.com/profile_images/2689776011/79d319d590925b1e64631d7060d375dd_400x400.png" alt="Twitter" width="30" />
+                    <a href="http://www.digitale-akademie.de/" title="Webpräsenz der Digitalen Akademie der Akademie der Wissenschaften und der LIteratur | Mainz">www.digitale-akademie.de</a> |
+                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Twitter_bird_logo_2012.svg" alt="Twitter" width="30" />
+                    <a href="https://twitter.com/digicademy" title="Die Digitale Akademie aut Twitter">@digicademy</a> |
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Twitter" width="30" />
+                    <a href="https://github.com/digicademy/mainzed_lunch_lectures_markup" title="Präsentation und Daten auf GitHub">digicademy</a>
+                    </strong>
+                    <hr>
+                    <span style="font-size: 17.5px;">
+                    Released unter
+                    <a href="https://creativecommons.org/licenses/by/4.0/" title="Präsentation und Daten auf GitHub">CC BY 4.0</a> (Max Grüntgens, Dominik Kasper und Torsten Schrade; Digitale Akademie)
+                    </span>
+            </h3>
+        </div>
+
+        <div class="step">
+            <h2>Gliederung</h2>
+
+            <ol>
+                <li>Vorstellung <a href="#vorstellung" style="font-size: 25px"">[&gt;]</a></li>
+                <li>Grundlagen <a href="#grundlagen" style="font-size: 25px"">[&gt;]</a>
+                <ul>
+                <li style="list-style-type:lower-latin; margin-top:-0.7em;">Auszeichnungssprachen <a href="#auszeichnungssprachen" style="font-size: 25px"">[&gt;]</a></li>
+                <li style="list-style-type:lower-latin;">Austauschformate <a href="#austauschformate" style="font-size: 25px"">[&gt;]</a></li>
+                <li style="list-style-type:lower-latin;">Extensible Markup Language (XML) <a href="#xml" style="font-size: 25px"">[&gt;]</a></li>
+                </ul>
+                </li>
+                <li>Praxis <a href="#praxis" style="font-size: 25px"">[&gt;]</a>
+                <ul>
+                <li style="list-style-type:lower-latin; margin-top:-0.7em;">Beispielmodellierung (Briefedition) <a href="#beispielmodellierung" style="font-size: 25px"">[&gt;]</a></li>
+                <li style="list-style-type:lower-latin;">Diskussion <a href="#diskussion" style="font-size: 25px"">[&gt;]</a></li>
+                <li style="list-style-type:lower-latin;">Résumé <a href="#resume" style="font-size: 25px"">[&gt;]</a></li>
+                </ul>
+                </li>
+                <li>Ausblick <a href="#ausblick" style="font-size: 25px"">[&gt;]</a>
+                <ul>
+                <li style="list-style-type:lower-latin; margin-top:-0.7em;">Schnittstellen, Nachnutzung und Lizenzierung <a href="#schnittstellen" style="font-size: 25px"">[&gt;]</a></li>
+                <li style="list-style-type:lower-latin;">Beispielhafte Projekte <a href="#beispiele" style="font-size: 25px"">[&gt;]</a></li>
+                <li style="list-style-type:lower-latin;">Further Reading <a href="#further_reading" style="font-size: 25px"">[&gt;]</a></li>
+                </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step" id="vorstellung">
+            <h1>01</h1>
+            <h2>Vorstellung</h2>
+        </div>
+
+        <div class="step">
+            <h2>Digitale Akademie der Akademie der Wissenschaften und der Literatur</h2>
+            <ul>
+                <li><strong>Beratung</strong> der Akademie zu allen Aspekten von Digitalisierungsvorhaben</li>
+                <li><strong>Konzeption</strong>, <strong>Gestaltung</strong> und <strong>Realisierung</strong> geisteswissenschaftlicher Forschungsapplikationen und virtueller Forschungsumgebungen mittels informationswissenschaftlich-informatischer Verfahren</li>
+                <li><strong>Projektbegleitung</strong> bei der Umsetzung digitaler Komponenten zusammen mit Partnern aus Wissenschaft und Wirtschaft</li>
+            </ul>
+        </div>
+
+        <div class="step" id="grundlagen">
+            <h1>02</h1>
+            <h2>Grundlagen</h2>
+        </div>
+
+        <div class="step" id="auszeichnungssprachen">
+
+            <h2>Eine Auszeichnungssprache …</h2>
+
+            <ul>
+                <li style="list-style-type:none;">… trennt Inhalt und Struktur.</li>
+                <li style="list-style-type:none;">… trennt einzelne strukturelle Ebenen.</li>
+                <li style="list-style-type:none;">… trennt einzelne bedeutungstragende Ebenen.</li>
+                <li style="list-style-type:none;">… ermöglicht verschiedene Ebenen von Meta-Daten.</li>
+                <li style="list-style-type:none;">… ermöglicht maschinelle Weiterverarbeitung.</li>
+                <li style="list-style-type:none;">… benutzt spezifische Schlüsselwörter und Delimiter.</li>
+            </ul>
+            <h3><strong>&#8658;  implizite Information explizit machen!</strong></h3>
+        </div>
+
+        <div class="step">
+
+            <h2>Anwendungsgebiete von Auszeichnungssprachen sind …</h2>
+
+            <ul>
+                <li style="list-style-type:none;">… Webseiten &#8658; Hypertext Markup Language (HTML)</li>
+                <li style="list-style-type:none;">… Textverarbeitung &#8658; MS-Word- & OpenOffice-XML</li>
+                <li style="list-style-type:none;">… Datenstrukturierung &#8658; Extensible Markup Language (XML)</li>
+                <li style="list-style-type:none;">… eBooks &#8658; EPUB3 (HTML + XML)</li>
+                <li style="list-style-type:none;">… Vektorgraphiken &#8658; Scalable Vector Graphics (SVG-XML)</li>
+                <li style="list-style-type:none;">… Semantic Web (gerichteter Graph) &#8658; (RDF-XML)</li>
+                <li style="list-style-type:none;">… Geodaten Keyhole Markup Language &#8658; (KML-XML)</li>
+            </ul>
+        </div>
+
+       <div class="step" id="austauschformate">
+
+            <h2>Austauschformate …</h2>
+
+            <ul>
+                <li style="list-style-type:none;">… dienen dem <strong>Austausch</strong> von Daten und Information zwischen <strong>heterogenen Systemen</strong>.</li>
+                <li style="list-style-type:none;">… sind häufig weniger komplex struktiert oder bieten “nur” einen <strong>Auszug der Daten</strong> an.</li>
+                <li style="list-style-type:none;">… basieren häufig auf <strong>XML</strong>. Weitere verbreitete Formate sind JSON und YAML.</li>
+                <li style="list-style-type:none;">… werden vorwiegend im Bereich von <strong>Apps</strong> und <strong>Webservices</strong> eingesetzt.</li>
+                <li style="list-style-type:none;">… werden meist im Zusammenspiel mit offenen Schnittstellen eingesetzt und ermöglichen eine <strong>Daten-Selbstbedienung</strong>.</li>
+            </ul>
+        </div>
+
+      <div class="step">
+
+            <h2>Auszeichnungssprachen …</h2>
+            <p>… sind daher stets auch in ihrer <strong>Funktion als Austauschformat</strong> zu betrachten. Dieses Credo gilt nicht nur für offensichtlich interdisziplinär ausgerichtete Datenproduzenten, sondern ebenso für traditionell “introdisziplinäre” Projekte.</p>
+            <p>Da nie die gesamte Bandbreite möglicher  <strong>Nachnutzungsszenarien</strong> innerhalb des Daten produzierenden Projektes antizipiert werden kann, ist auf eine möglichst <strong>standardisierte und offene Bereitstellungsform</strong> hinzuarbeiten.</p>
+        </div>
+
+
+<div class="step" id="xml">
+<h2>Extensible Markup Language (XML)</h2>
+    <p>XML trennt Inhalt und Struktur sowie verschiedene Ebenen von Semantik und Metadaten durch <strong>Delimiter und Schlüsselworte</strong> voneinander.</p>
+    <p>Vokabular und Syntax von XML sind <strong>anpassbar</strong> und <strong>erweiterbar</strong>. Mit Schema-Sprachen lässt sich ein Regelwerk für projekteigene XML-Dateien erstellen.</p>
+</div>
+
+
+<div class="step">
+<h2>Wohlgeformtheit und Validität</h2>
+<p>Wenn das XML-Dokument den allgemeinen Syntax-Regeln gehorcht, spricht man von “<strong>Wohlgeformtheit</strong>”. Ist das Dokument zusätzlich konform zu einem Schema, spricht man “<strong>Validität</strong>”.</p>
+    <p>Die Daten “valider” Dokumente können mithilfe von Abfrage-Sprachen und Transformations-Sprachen <strong>durchsucht</strong>, <strong>akkumuliert</strong> und bspw. <strong>in Ausgabeformate überführt</strong> werden.</p>
+    <p>Auf der <strong>Grundlage konsistenter Datenhaltung</strong> können also Register und Indices akkumuliert oder auch Druckvorstufen produziert werden.</p>
+</div>
+
+<div class="step">
+<p>Delimiter sind:</p>
+<ul>
+<li>Spitze Klammern (“Krokodilsklammern”) und Schrägstrich</li>
+<li>Anführungszeichen</li>
+<li>Kaufmanns-Und und Semikolon</li>
+</ul>
+</div>
+
+<div class="step">
+<p>Bei den Schlüsselworten unterscheidet man zwischen:</p>
+<ul>
+<li>Elementen: <code>&lt;element&gt;</code>
+<pre><code class="xml">&lt;letter&gt;
+    &lt;sender&gt;Max Mustermann&lt;/sender&gt;
+    &lt;recipient&gt;Mina Musterfrau&lt;/recipient&gt;
+&lt;/letter&gt;</code></pre></li>
+<li>Attribute: <code>&lt;element attribut=&quot;attributwert&quot;&gt;</code>
+<pre><code class="xml">&lt;letter identifier=&quot;xyz123&quot;&gt;
+    &lt;sender identifier=&quot;m0001&quot;&gt;Max Mustermann&lt;/sender&gt;
+    &lt;recipient identifier=&quot;f0001&quot;&gt;Mina Musterfrau&lt;/recipient&gt;
+&lt;/letter&gt;</code></pre></li>
+<li>Namespace-Präfixe: <code>&lt;präfix:element&gt;</code>
+<pre><code class="xml">&lt;root xmlns:prj=&quot;http://url/to/namespace/prj/&quot;&gt;
+    &lt;letter&gt;
+        &lt;sender identifier=&quot;m0001&quot;&gt;Max Mustermann&lt;/sender&gt;
+        &lt;prj:letter&gt;Blackletter Script&lt;/prj:letter&gt;
+    &lt;/letter&gt;
+&lt;root&gt;</code></pre></li>
+</ul>
+</div>
+
+
+<div class="step">
+<h2>Best Practice</h2>
+<p>Als grundlegende Best Practice der Datenhaltung mit XML gilt, <strong>Daten</strong> wie die Abschnitte eines Quellentextes oder konstituierende Attribute einer Person <strong>als Elemente</strong> zu behandeln.</p>
+<p><strong>Meta-Daten</strong> wie die Identifikationsnummern von Abschnitten des Quellentextes oder Verweise auf Identifikatoren von Normdateien sollten <strong>als Attribut</strong> annotiert werden.</p>
+</div>
+
+
+
+       <div class="step" id="praxis">
+            <h1>03</h1>
+            <h2>Praxis</h2>
+        </div>
+
+       <div class="step" id="beispielmodellierung">
+            <h2>Beispielmodellierung (Briefedition)</h2>
+            <p>Teilen Sie den Quellentext in für Sie sinnvolle strukturelle und/oder bedeutungstragende Einheiten eine.</p>
+            <p>Kreieren Sie eigene Elemente und Attribute zur Auszeichnung der Quelle.</p>
+        </div>
+
+
+       <div class="step" id="diskussion">
+            <h2>Diskussion</h2>
+            <p>Wo lag Ihr Fokus beim Auszeichnen der Quelle?</p>
+            <p>Wie hoch schätzen Sie die Überschneidung des benutzten Vokabulars zwischen Fachkollegen ein?</p>
+        </div>
+
+
+        <div class="step" id="resume">
+            <h2>Résumé</h2>
+        </div>
+
+
+      <div class="step" id="ausblick">
+            <h1>04</h1>
+            <h2>Ausblick</h2>
+        </div>
+
+
+       <div class="step" id="schnittstellen">
+            <h2>Schnittstellen, Nachnutzung und Lizenzierung</h2>
+            <p>Forschungsdaten werden nach der Auszeichnung über <strong>maschinenlesbare Kommunikations-Schnittstellen</strong> (vgl. <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>) zugänglich gemacht. Die Nutzung der Daten durch Dritte erfolgt hierbei “in Selbstbedienung”. Erst eine <strong>offene Lizenzierung von Forschungsdaten</strong> ermöglicht daher in diesem Sinne eine rechtssichere Nachnutzung und Bearbeitung.</p><p>Ohne eine offene Lizenzierung ist die digitale Aufbereitung in strukturierter und maschinenlesbarer Form sinnlos, da die inhärenten Potentiale ungenutzt bleiben. Eine klare Form der Lizenzierung bieten die sogenannten <a href="https://creativecommons.org/">Creative Commons-Lizenzen</a>.</p>
+
+        </div>
+
+
+        <div class="step" id="beispiele">
+            <h2>Beispielhafte Projekte</h2>
+        </div>
+
+
+
+
+        <div class="step">
+            <h2>correspSearch</h2>
+            <h3><strong>Verzeichnisse von Briefeditionen durchsuchen</strong></h3>
+            <p>
+                Der Webservice aggregiert und wertet Dateien im “Correspondence Metadata Interchange”-Format aus.
+            </p>
+            <h4><strong>Schnittstelle</strong></h4>
+            <p>Mit Hilfe der API kann correspSearch automatisiert abgefragt und die Ergebnisse in eigene Websites oder andere Software integriert werden. Die Ergebnisse werden als TEI-XML-Datei im CMI-Format ausgegeben. </p>
+            <p><a href="http://correspsearch.net/index.xql?l=de">Zur Webseite!</a></p>
+        </div>
+
+        <div class="step">
+            <h2>EpiDat</h2>
+            <h3><strong>Datenbank zur jüdischen Grabsteinepigraphik</strong></h3>
+            <p>
+                Die Datenbank zur jüdischen Grabsteinepigraphik epidat dient der Inventarisation, Dokumentation, Edition und Präsentation epigraphischer Bestände. In digitaler Edition online zugänglich sind gegenwärtig 160 digitale Editionen mit 32.245 Grabinschriften (66.667 Bilddateien). Die epigraphischen Daten stehen in verschiedenen Formaten zur Nachnutzung zur Verfügung.</p>
+            <p><a href="http://www.steinheim-institut.de/cgi-bin/epidat">Zur Webseite!</a></p>
+        </div>
+
+        <div class="step" id="further_reading">
+            <h2>Further Reading</h2>
+            <ul>
+                <li>S. Kurz: <em>Digital Humanities. Grundlagen und Technologien für die Praxis</em>. Berlin 2016. <a href="http://link.springer.com/book/10.1007%2F978-3-658-11213-4" target="_blank">[eBook via Uni MZ]</a> (Handbuch)</li>
+                <li>M. Thaller (Hrsg.): <em>Special Issue: Controversies around the Digital Humanities</em>. HSR Vol. 37, No. 3 (2012). <a href="http://www.gesis.org/hsr/archiv/2012/373-digital-humanities/" target="_blank">[frei zugänglich]</a></li>
+                <li>M. Grüntgens, T. Schrade: <em>Data repositories in the Humanities and the Semantic Web: modelling, linking, visualising</em>. In: Adamou, et.al. (Hrsg.): Proceedings of the 1st Workshop on Humanities in the Semantic Web (2016), S. 53–64. <a href="http://ceur-ws.org/Vol-1608/paper-07.pdf" target="_blank">[frei zugänglich]</a> (XML-Nachnutzung)</li>
+            </ul>
+            <h2>Tutorials</h2>
+            <ul>
+                    <li><a href="https://www.codecademy.com/learn/web" target="_blank">Interaktives HTML & CSS Tutorial</a></li>
+                    <li><a href="http://www.w3schools.com/xml/" target="_blank">W3C Schools XML Tutorial</a></li>
+                    <li><a href="http://teibyexample.org/TBE.htm?page=example" target="_blank">Text Encoding Initiative (TEI) by Example</a></li>
+            </ul>
+        </div>
+
+
+
+
+
+
+
+        <div class="step">
+
+            <h2 class="centered">Vielen Dank für Ihre Aufmerksamkeit</h2>
+
+<pre style="margin-left: -5em"><code class="xml">
+&lt;presentation type=&quot;lunch_lecture&quot;&gt;
+  &lt;section id=&quot;end&quot;&gt;
+      &lt;lecturer gnd=&quot;1018230939&quot;&gt;
+        &lt;articulation type=&quot;assertion&quot;&gt;“Vielen Dank für ihre Aufmerksamkeit!”&lt;/articulation&gt;
+        &lt;articulation type=&quot;question&quot;&gt;“Gibt es noch Fragen?”&lt;/articulation&gt;
+      &lt;/lecturer&gt;
+  &lt;/section&gt;
+&lt;/presentation&gt;
+</code></pre>
+        </div>
+        <div class="step">
+
+            <h2>Stuff used</h2>
+
+            <ul>
+                <li><a href="https://github.com/impress/impress.js">Impress.js</a> (Präsentation)</li>
+                <li><a href="https://highlightjs.org/">hightlight.js</a> (Syntax Highlighting)</li>
+            </ul>
+
+            <p>Präsentation &amp; Daten: <a href="https://github.com/digicademy/mainzed_lunch_lectures_markup">GitHub</a></p>
+
+            <p>
+                Lizenz: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, Max Grüntgens, Dominik Kasper und Torsten Schrade; Digitale Akademie
+            </p>
+
+        </div>
+    </div>
+<!--  END -->
+
+<!-- include impress.js -->
+        <script>
+        if ("ontouchstart" in document.documentElement) {
+            document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+        }
+        </script>
+        <script src="js/impress.js"></script>
+        <script>impress().init();</script>
+    </body>
+</html>

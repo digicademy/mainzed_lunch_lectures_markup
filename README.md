@@ -1,4 +1,4 @@
-### 06.06.2016 | mainzed | Lunch Lectures
+### 06.07.2016 | mainzed | Lunch Lectures
 
 # Markup in geisteswissenschaftlichen Forschungs- und Publikations-Kontexten
 
